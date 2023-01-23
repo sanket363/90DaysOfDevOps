@@ -1,0 +1,26 @@
+- Fork this Repo.
+Done
+
+- Start with a DevOps Roadmap[https://youtu.be/iOE9NTAG35g]
+Done
+- Write a LinkedIn post or a small article about your understanding of DevOps
+ - What is DevOps
+    Devops is the combination of development(Dev) and operations(Ops). It Improves collaboration and communication between development and operations teams to deliver software and services more quickly and efficiently
+
+ - What is Automation, Scaling, Infrastructure
+    Automation:
+        Automation is the process of using technology to accomplish tasks without human interaction. In DevOps, automation is utilized through the implementation of tools and scripts to automate repetitive activities such as construction, testing, and release of software
+    Scaling:
+        scaling is the adjustment of resources such as servers, storage, or network capacity to adjust to the varying requirements of a software system. This can be achieved by either increasing or decreasing the number of servers (horizontal scaling) or by modifying the resources of an individual server (vertical scaling). Scaling is significant in DevOps as it enables the system to manage increased traffic or load and maintain a positive user experience.
+    Infrastructure:
+        Infrastructure refers to the physical and virtual resources that are required to support the design, testing, and launch of software, including servers, storage, networks, and other hardware and software elements.
+    
+ - Why DevOps is Important, etc
+    DevOps is important for several reasons:
+        1.Faster software release: DevOps techniques enable faster software delivery by automating the build, test, and deployment process and by encouraging better communication and collaboration between development and operations teams.
+
+        2.Improved software quality: DevOps includes automated testing, monitoring, and continuous feedback which can help identify and fix errors before they reach production. This results in better quality software.
+
+        3.Greater adaptability: DevOps allows for more frequent, smaller code releases which enables organizations to respond more quickly to changing business requirements and customer needs.
+
+        4.Strengthened collaboration: DevOps encourages a culture of collaboration between development and operations teams, breaking down silos and fostering a shared sense of ownership and responsibility for the entire software delivery process.
