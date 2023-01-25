@@ -1,0 +1,59 @@
+1. To view what's written in a file.
+Ans. To view what's written in a file use "cat filename"
+
+2. To change the access permissions of files.
+Ans. To change the access permissions of files use "chmod permission-level(r-w-x) filename"
+example: chmod 777 test.txt
+         chmod ugo+rwx test.txt
+
+3. To check which commands you have run till now.
+Ans. To check which commands you have run till now use "history"
+
+4. To remove a directory/ Folder.
+Ans. To remove a directory/Folder use "rm -rf filename/foldername
+also can use rmdir foldername ----- to remove a folder
+
+5. To create a fruits.txt file and to view the content.
+Ans. To create a fruits.txt file and to view the content use
+touch fruits.txt
+cat fruits.txt
+
+6. Add content in devops.txt (One in each line) - Apple, Mango, Banana, Cherry, Kiwi, Orange, Guava.
+Ans. To add content in devops.txt one in each line use
+vi devops.txt
+echo 'Apple' >> devops.txt
+echo 'Mango' >> devops.txt
+echo 'Banana' >> devops.txt
+echo 'Cherry' >> devops.txt
+echo 'Kiwi' >> devops.txt
+echo 'Orange' >> devops.txt
+echo 'Guava' >> devops.txt
+
+7. To Show only top three fruits from the file.
+Ans. To Show only the top three fruit from the file use the following
+head -n 3 devops.txt
+
+8. To Show only bottom three fruits from the file.
+Ans. To Show only the top three fruit from the file use the following
+tail -n 3 devops.txt
+
+9. To create another file Colors.txt and to view the content.
+Ans. To create another file Colors.txt and to view the content use the following
+vi colors.txt
+cat colors.txt
+
+10. Add content in Colors.txt (One in each line) - Red, Pink, White, Black, Blue, Orange, Purple, Grey.
+Ans. To add content in Colors.txt (One in each line) use the following
+vi colors.txt
+echo 'Red' >> devops.txt
+echo 'Pink' >> devops.txt
+echo 'White' >> devops.txt
+echo 'Black' >> devops.txt
+echo 'Blue' >> devops.txt
+echo 'Orange' >> devops.txt
+echo 'Purple' >> devops.txt
+echo 'Grey' >> devops.txt
+
+11. To find the difference between fruits.txt and Colors.txt file.
+Ans. To find the difference between fruit.txt and Colors.txt file use the following
+diff fruits.txt Colors.txt 
