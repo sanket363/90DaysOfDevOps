@@ -1,0 +1,42 @@
+ **Tasks**
+
+ - Explain in your own words and examples, what is Shell Scripting for DevOps.
+Ans. We can say Shell Scripting for DevOps is a method of automating the execution of certain tasks and processes in a Linux based Operating System. Shell Scripts are also useful for automating routine system administration tasks, such as creating backups, monitoring performance, and managing user accounts.
+Simple shell script Example:
+A DevOps engineer might use a shell script to automate the process of taking a backup of a mysql server on daily basis.
+
+ - What is `#!/bin/bash?` can we write `#!/bin/sh` as well?
+Ans. The `#!/bin/bash` is the first line in a shell script and it specifies which interpreter should be used to run the script. In this case, the interpreter specified is /bin/bash, which is the most commonly used shell interpreter on Linux systems.
+The `#!/bin/sh` works as a symbolic link to the `#!/bin/bash` interpreter in many systems, and in some systems can also direct to other interpreters.
+
+ - Write a Shell Script which prints `I will complete #90DaysOofDevOps challenge`
+Ans. #!/bin/bash
+     echo "I will complete #90DaysOofDevOps challenge"
+
+ - Write a Shell Script to take user input, input from arguments and print the variables.
+Ans. #!/bin/bash
+
+     echo "Enter a value:"
+     read user_input
+     # Take input from arguments
+     argument_input=$1
+     echo "User input: $user_input"
+     echo "Argument input: $argument_input"
+
+ - Write an Example of If else in Shell Scripting by comparing 2 numbers
+Ans. #!/bin/bash
+
+     # Take user input for the first number
+     echo "Enter the first number:"
+     read num1
+
+     # Take user input for the second number
+     echo "Enter the second number:"
+     read num2
+
+     # Compare the numbers
+     if [ $num1 -gt $num2 ]; then
+        echo "The first number is greater than the second number."
+     else
+        echo "The first number is not greater than the second number."
+     fi
