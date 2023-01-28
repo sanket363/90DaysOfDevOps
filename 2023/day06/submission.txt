@@ -24,3 +24,12 @@ total 0
 2) Write an article about File Permissions based on your understanding from the notes.
 
 3) Read about ACL and try out the commands `getfacl` and `setfacl`
+Ans.
+
+Access Control Lists (ACLs) are a way to set more fine-grained permissions on files and directories in Linux. They allow you to set permissions for specific users or groups, rather than just the owner and group of a file.
+
+setfacl: This command is used to set or modify ACLs on a file or directory. For example, to give user "sanket" read and execute permissions on a file named "example.txt", you can use the following command:
+setfacl -m u:sanket:rx example.txt
+
+getfacl: This command is used to view the current ACLs on a file or directory. For example, to view the ACLs on a file named "example.txt", you can use the following command:
+getfacl example.txt
