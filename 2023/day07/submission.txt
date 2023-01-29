@@ -1,0 +1,129 @@
+## Tasks
+
+ 1) You have to install docker and jenkins in your system from your terminal using package managers
+Ans.
+ # Installation of jenkins
+
+ #installing supported java packages
+
+ yum install java-11-openjdk.x86_64 -y
+
+ #setting up the jenkins repository
+
+ sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+ #adding up the key for long term support
+
+ sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+ #installing jenkins
+
+ yum install jenkins -y
+
+ #starting the jenkins
+
+ sudo systemctl start jenkins
+ sudo systemctl status jenkins
+
+ Once downloaded navigate to http://publicip:8080 for accessing jenkins gui on web browser
+
+ # Installation of Docker
+
+ #To remove all old docker packages:
+
+ sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+
+ #Installing yum-utils and yum-config-manager:
+
+ sudo yum install -y yum-utils
+
+ sudo yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+
+ #Installing the latest version of the docker
+
+ sudo yum install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+ # Start the Docker
+
+ sudo systemctl start docker
+
+ # Run the command `sudo docker run hello-world` for verifying:
+
+ sudo docker run hello-world
+
+ Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+2db29710123e: Pull complete
+Digest: sha256:aa0cc8055b82dc2509bed2e19b275c8f463506616377219d9642221ab53cf9fe
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+
+ 2) Write a small blog or article to install these tools using package managers on Ubuntu and CentOS
+
+ 3) check the status of docker service in your system (make sure you completed above tasks, else docker won't be installed)
+Ans.
+
+ #For seeing the status of the docker service:
+
+ service docker status
+
+Redirecting to /bin/systemctl status docker.service
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/usr/lib/systemd/system/docker.service; disabled; vendor preset: disabled)
+   Active: active (running) since Sun 2023-01-29 14:31:01 UTC; 13s ago
+     Docs: https://docs.docker.com
+ Main PID: 4589 (dockerd)
+    Tasks: 9
+   Memory: 36.6M
+   CGroup: /system.slice/docker.service
+           └─4589 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+
+Jan 29 14:31:00 622cba6e901c.mylabserver.com dockerd[4589]: time="2023-01-29T14:31:00.463452412Z" level=info msg="Successfully cre...apperJan 29 14:31:00 622cba6e901c.mylabserver.com dockerd[4589]: time="2023-01-29T14:31:00.787791244Z" level=warning msg="[graphdriver]...ease"Jan 29 14:31:00 622cba6e901c.mylabserver.com dockerd[4589]: time="2023-01-29T14:31:00.809153614Z" level=info msg="Loading containe...art."Jan 29 14:31:01 622cba6e901c.mylabserver.com dockerd[4589]: time="2023-01-29T14:31:01.507911501Z" level=info msg="Default bridge (...ress"Jan 29 14:31:01 622cba6e901c.mylabserver.com dockerd[4589]: time="2023-01-29T14:31:01.598468369Z" level=info msg="Loading containe...one."Jan 29 14:31:01 622cba6e901c.mylabserver.com dockerd[4589]: time="2023-01-29T14:31:01.612281129Z" level=info msg="Docker daemon" c...10.23Jan 29 14:31:01 622cba6e901c.mylabserver.com dockerd[4589]: time="2023-01-29T14:31:01.612863418Z" level=info msg="Daemon has compl...tion"Jan 29 14:31:01 622cba6e901c.mylabserver.com systemd[1]: Started Docker Application Container Engine.
+Jan 29 14:31:01 622cba6e901c.mylabserver.com dockerd[4589]: time="2023-01-29T14:31:01.664972441Z" level=info msg="API listen on /v...sock"Jan 29 14:31:08 622cba6e901c.mylabserver.com dockerd[4589]: time="2023-01-29T14:31:08.634232902Z" level=info msg="ignoring event" ...lete"Hint: Some lines were ellipsized, use -l to show in full.
+
+ 4) stop the service jenkins and post before and after screenshots
+
+ 5) read about the commands systemctl vs service
+
+ eg. `systemctl status docker` vs `service docker status`
+
+ systemctl and service are both Linux commands used to manage system services, but there are some differences between them:
+
+Availability: systemctl is the default service management tool for recent versions of systemd-based distributions (such as Fedora, CentOS, and Red Hat Enterprise Linux 7 and later), while service is used in older distributions (such as CentOS 6 and earlier, and Debian 7 and earlier).
+
+Functionality: systemctl provides a comprehensive set of commands for managing system services, including starting, stopping, restarting, reloading, and checking the status of services. In contrast, service provides a simpler set of commands, limited to starting, stopping, and checking the status of services.
+
+Syntax: The syntax of systemctl commands is more complex than that of service commands
+
+Integration with system management: systemctl is integrated with other system management tools, such as journalctl, to provide a unified view of system logs and events. service does not have this integration.
+In summary, systemctl provides more functionality and is more tightly integrated with the rest of the system management tools, but it also has a more complex syntax. service is simpler and easier to use, but provides fewer features.
