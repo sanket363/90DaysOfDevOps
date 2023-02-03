@@ -1,0 +1,83 @@
+# Task-01 
+- Create a new branch and make some changes to it.
+- Use git stash to save the changes without committing them.
+- Switch to a different branch, make some changes and commit them.
+- Use git stash pop to bring the changes back and apply them on top of the new commits.
+Ans. git checkout -b new_branch
+     
+     # modify some files
+     git stash
+
+     #Switch to a different branch:
+     git checkout different_branch
+
+     # modify some files
+     git commit -am "commit message"
+
+     git stash pop
+
+# Task-02
+- In version01.txt of development branch add below lines after “This is the bug fix in development branch” that you added in Day10 and reverted to this commit.
+- Line2>> After bug fixing, this is the new feature with minor alteration”
+
+  Commit this with message “ Added feature2.1 in development branch”
+- Line3>> This is the advancement of previous feature
+
+  Commit this with message “ Added feature2.2 in development branch”
+- Line4>> Feature 2 is completed and ready for release
+
+  Commit this with message “ Feature2 completed”
+- All these commits messages should be reflected in Production branch too which will come out from Master branch (Hint: try rebase).
+Ans. #Switch to the development branch:
+     git checkout development
+
+     # open version01.txt in a text editor
+     # add the following lines after "This is the bug fix in development branch"
+     Line2>> After bug fixing, this is the new feature with minor alteration
+     Line3>> This is the advancement of previous feature
+     Line4>> Feature 2 is completed and ready for release
+     # save the changes to version01.txt
+
+     #Commit the changes with message "Added feature2.1 in development branch":
+     git add version01.txt
+     git commit -m "Added feature2.1 in development branch"
+
+     #Add another line to version01.txt and commit the changes with message "Added feature2.2 in development branch":
+     # open version01.txt in a text editor
+     # add the line "Line3>> This is the advancement of previous feature"
+     # save the changes to version01.txt
+     git add version01.txt
+     git commit -m "Added feature2.2 in development branch"
+
+     #Add the last line to version01.txt and commit the changes with message "Feature2 completed":
+     # open version01.txt in a text editor
+     # add the line "Line4>> Feature 2 is completed and ready for release"
+     # save the changes to version01.txt
+     git add version01.txt
+     git commit -m "Feature2 completed"
+
+     # To reflect all these commits in the production branch (which comes from the master branch), you can use the git rebase command:
+
+     git checkout production
+     git rebase master
+
+# Task-03
+- In Production branch Cherry pick Commit “Added feature2.2 in development branch” and added below lines in it:
+- Line to be added after Line3>> This is the advancement of previous feature
+- Line4>>Added few more changes to make it more optimized.
+- Commit: Optimized the feature
+Ans. #Switch to the production branch:
+     git checkout production
+
+     #Cherry-pick the commit "Added feature2.2 in development branch" from the development branch:
+     git cherry-pick <commit-hash>
+
+     #Add the lines to version01.txt:
+     # open version01.txt in a text editor
+     # add the following lines after "Line3>> This is the advancement of previous feature"
+     Line4>> Added few more changes to make it more optimized.
+     # save the changes to version01.txt
+
+     #Commit the changes with message "Optimized the feature":
+     git add version01.txt
+     git commit -m "Optimized the feature"
