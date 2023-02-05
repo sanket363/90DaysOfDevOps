@@ -1,0 +1,58 @@
+Task1:
+1. Install Python in your respective OS, and check the version.
+Ans. Installing Python on ubuntu use:
+
+    sudo apt-get update
+    sudo apt-get install python3
+
+For Windows installing the python on windows use:
+
+    1. Go to the official Python website (https://www.python.org/downloads/windows/) and download the latest version of Python for Windows.
+
+    2. Run the downloaded executable file to start the installation process.
+
+    3. Follow the on-screen instructions to complete the installation process. Make sure to check the option to add Python to your PATH during the installation process.
+
+    4. To verify that Python is installed successfully, open the Command Prompt or PowerShell and type the following command:
+
+    python
+    
+    5. You should see the Python prompt, which indicates that Python has been installed successfully. You can then start using Python by entering commands at the prompt or by writing and running Python scripts.
+
+2. Read about different Data Types in Python.
+Ans. In Python, there are several built-in data types that are used to store and manipulate data, including:
+
+Numeric Types:
+
+    int (for integers)
+    float (for floating-point numbers)
+    complex (for complex numbers)
+
+Sequence Types:
+
+    list (for ordered, mutable sequences of items)
+    tuple (for ordered, immutable sequences of items)
+    
+Mapping Type:
+
+    dict (for key-value pairs)
+
+Set Types:
+
+    set (for unordered collections of unique items)
+    frozenset (for immutable sets)
+
+String Types:
+
+    str (for strings of Unicode characters)
+
+Boolean Type:
+
+    bool (for Boolean values True and False)
+
+Binary Types:
+
+    bytes (for binary data)
+    bytearray (for mutable binary data)
+
+These data types can be used to store and manipulate different types of data, such as numbers, text, and collections of data. Python also supports custom data types defined by the user, called user-defined data types or classes.
