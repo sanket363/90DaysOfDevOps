@@ -1,0 +1,44 @@
+## Tasks
+1. Give the Difference between List, Tuple and set. Do Handson and put screenshots as per your understanding.
+Ans. List, Tuple, and Set are all data structures in Python used to store collections of items.
+
+List: A list is a collection of items that are ordered, mutable (can be changed), and allows duplicates. Lists are defined by square brackets [].
+
+Tuple: A tuple is similar to a list but it is ordered, immutable (cannot be changed), and allows duplicates. Tuples are defined by round parentheses ().
+
+Set: A set is an unordered collection of unique items. It is mutable and does not allow duplicates. Sets are defined by curly braces {} or the set() function.
+
+2. Create below Dictionary and use Dictionary methods to print your favourite tool just by using the keys of the Dictionary.
+```
+fav_tools = 
+{ 
+  1:"Linux", 
+  2:"Git", 
+  3:"Docker", 
+  4:"Kubernetes", 
+  5:"Terraform", 
+  6:"Ansible", 
+  7:"Chef"
+}
+```
+Ans. 
+fav_tools = {1:"Linux", 2:"Git", 3:"Docker", 4:"Kubernetes", 5:"Terraform", 6:"Ansible", 7:"Chef"}
+for key in fav_tools:
+  print(fav_tools[key])
+
+3. Create a List of cloud service providers
+eg.
+```
+cloud_providers = ["AWS","GCP","Azure"]
+```
+Ans.
+cloud_providers = ['Amazon Web Services (AWS)', 'Microsoft Azure', 'Google Cloud Platform (GCP)', 'IBM Cloud', 'Alibaba Cloud', 'Oracle Cloud']
+
+Write a program to add `Digital Ocean` to the list of cloud_providers and sort the list in alphabetical order.
+Ans.
+cloud_providers = ['Amazon Web Services (AWS)', 'Google Cloud Platform (GCP)', 'Microsoft Azure', 'IBM Cloud', 'Alibaba Cloud', 'Oracle Cloud']
+
+cloud_providers.append("DigitalOcean")
+cloud_providers.sort()
+
+print(cloud_providers)
