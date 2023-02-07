@@ -1,0 +1,50 @@
+## Tasks
+1. Create a Dictionary in Python and write it to a json File.
+Ans. 
+import json
+
+# Define the dictionary
+data = {"name": "kunal", "age": 30, "city": "New York"}
+
+# Write the dictionary to a JSON file
+with open("data.json", "w") as file:
+    json.dump(data, file)
+
+2. Read a json file `services.json` kept in this folder and print the service names of every cloud service provider.
+
+```
+output
+
+aws : ec2
+azure : VM
+gcp : compute engine
+
+```
+Ans. 
+import json
+
+# Read the JSON file
+with open("services.json") as file:
+    data = json.load(file)
+
+# Print the service names of each cloud service provider
+for provider in data:
+    print(f"Service Provider: {provider['name']}")
+    for service in provider['services']:
+        print(f"\tService Name: {service['name']}")
+
+3. Read YAML file using python, file `services.yaml` and read the contents to convert yaml to json
+Ans.
+import yaml
+import json
+
+# Read the YAML file
+with open("services.yaml") as file:
+    data = yaml.safe_load(file)
+
+# Convert the YAML data to JSON
+json_data = json.dumps(data)
+
+# Write the JSON data to a file
+with open("services.json", "w") as file:
+    file.write(json_data)
