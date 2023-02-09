@@ -1,0 +1,45 @@
+task:
+- Create a Dockerfile for a simple web application (e.g. a Node.js or Python app)
+
+# Use an existing image as the base image
+FROM ubuntu:18.04
+
+# Update the package repository
+RUN apt-get update
+
+# Install Apache web server
+RUN apt-get install -y apache2
+
+# Set the working directory to /var/www/html
+WORKDIR /var/www/html
+
+# Copy the contents of the local directory to the image
+COPY . .
+
+# Expose port 80 to allow connections to the Apache web server
+EXPOSE 80
+
+# Start the Apache web server
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+
+- Build the image using the Dockerfile and run the container
+ans.
+#building the image using the docker build command
+docker build -t my-apache-image .
+
+#running the image using the docker run command
+docker run -p 80:80 my-apache-image
+
+- Verify that the application is working as expected by accessing it in a web browser
+
+
+- Push the image to a public or private repository (e.g. Docker Hub )
+ans.
+# Tag the image with a repository name and version
+docker tag my-apache-image <docker_hub_username>/my-apache-image:latest
+
+# Log in to Docker Hub
+docker login -u <docker_hub_username> -p <docker_hub_password>
+
+# Push the image to Docker Hub
+docker push <docker_hub_username>/my-apache-image:latest
