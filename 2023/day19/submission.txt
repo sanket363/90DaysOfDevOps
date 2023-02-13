@@ -1,0 +1,53 @@
+## Task-1
+- Create a multi-container docker-compose file which will bring *UP* and bring *DOWN* containers in a single shot ( Example - Create application and database container )
+Ans.
+Below is the docker-compose file which will bring *UP* and bring *DOWN* containers in a single shot
+
+version: '3'
+services:
+  app:
+    image: myapp
+    ports:
+      - "3000:3000"
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
+
+#For making the container up use below command
+docker-compose up
+
+#For making the container down use below command
+docker-compose down
+
+## Task-2
+- Learn how to use Docker Volumes and Named Volumes to share files and directories between multiple containers.
+- Create two or more containers that read and write data to the same volume using the `docker run --mount` command.
+- Verify that the data is the same in all containers by using the docker exec command to run commands inside each container.
+- Use the docker volume ls command to list all volumes and docker volume rm command to remove the volume when you're done.
+Ans.
+
+#for creating a named volume:
+docker volume create my_volume
+
+#starting the first container and mounting the volume:
+docker run -d --name container1 --mount source=my_volume,target=/app busybox
+
+#starting the second container and mounting the same volume:
+docker run -d --name container2 --mount source=my_volume,target=/app busybox
+
+#Verify that the data is the same in both container:
+docker exec container1 ls /app
+docker exec container2 ls /app
+
+#Write some data to the volume from one of the containers:
+docker exec container1 echo "Hello from container 1" > /app/data.txt
+
+#Verify that the data is available in both containers:
+docker exec container1 cat /app/data.txt
+docker exec container2 cat /app/data.txt
+
+#When you're done, you can remove the volume
+docker volume rm my_volume
