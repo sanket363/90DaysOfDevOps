@@ -6,7 +6,7 @@ Below is the docker-compose file which will bring *UP* and bring *DOWN* containe
 version: '3'
 services:
   app:
-    image: myapp
+    image: hello-world
     ports:
       - "3000:3000"
   db:
