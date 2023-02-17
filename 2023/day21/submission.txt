@@ -1,0 +1,106 @@
+##Task:
+
+- What is the Difference between an Image, Container and Engine?
+Ans. Image: An image is a file that contains a pre-built environment with all the dependencies and software required to run an application. It is a lightweight, standalone, executable package that includes everything needed to run an application, such as code, libraries, and system tools. Images are created by a developer, and they can be shared and used by others to run the same application in a consistent and reproducible way.
+
+Container & Engine: A container engine, on the other hand, is the software that runs and manages containers. It is responsible for creating, starting, stopping, and deleting containers. The container engine provides a runtime environment for the container, isolating it from the host system and other containers. The most commonly used container engine is Docker, but there are other options such as Kubernetes, LXC, and others.
+
+- What is the Difference between the Docker command COPY vs ADD?
+Ans.In Docker, the COPY and ADD commands are used to copy files from the host file system into the container image. The main difference between these two commands is how they handle the source file.
+
+The COPY command simply copies files from the host file system to the container file system. It takes two arguments: the source path and the destination path. For example:
+
+COPY index.html /var/www/html/
+
+In this example, the file index.html is copied from the host file system to the /var/www/html/ directory in the container.
+
+The ADD command is similar to COPY, but it has some additional features. In addition to copying files from the host file system to the container file system, it can also extract files from archives and URLs. It takes two arguments: the source path and the destination path. For example:
+
+ADD example.tar.gz /opt/
+
+In this example, the archive example.tar.gz is extracted and copied to the /opt/ directory in the container.
+
+One important thing to note is that if the source file is a local tar archive or URL, Docker will automatically unpack it into the destination directory. This can be a security risk if the source file is untrusted. Therefore, it's recommended to use COPY whenever possible, and only use ADD when you need its additional features.
+
+- What is the Difference between the Docker command CMD vs RUN?
+Ans. The RUN command is used to execute a command during the build process of a Docker image. It takes a command as an argument and runs it in a new layer on top of the current image. For example, the following Dockerfile runs an update command during the build process:
+
+FROM ubuntu:latest
+RUN apt-get update
+
+In this example, the RUN command runs the apt-get update command in a new layer on top of the ubuntu:latest image during the build process.
+
+The CMD command, on the other hand, is used to specify the command to be executed when a container based on the image is started. It takes a command as an argument and sets it as the default command for the container. For example:
+
+FROM ubuntu:latest
+CMD ["echo", "Hello, World!"]
+
+In this example, the CMD command sets the default command for the container to be the echo "Hello, World!" command. When a container is created from this image and started, it will automatically execute this command.
+
+- How Will you reduce the size of the Docker image?
+Ans.1. Use a smaller base image: The size of a Docker image largely depends on the size of the base image. Choosing a smaller base image like Alpine Linux, which is specifically designed for use in containers, can significantly reduce the size of the resulting image.
+
+2. Remove unnecessary files: Removing unnecessary files and directories that are not required by the application can significantly reduce the size of the image. For example, temporary files, logs, and cache files can be deleted to reduce the image size.
+
+3.Use multi-stage builds: Multi-stage builds can help reduce the size of Docker images by enabling you to build a smaller final image. This involves building the application in one image and copying the compiled application into a smaller image for deployment.
+
+4. Use COPY instead of ADD: The COPY command is simpler and more efficient than the ADD command. It is recommended to use COPY instead of ADD whenever possible as it avoids unnecessary processing and unpacking of the files.
+
+5. Minimize the number of layers: Each command in a Dockerfile creates a new layer in the resulting image, which can increase the image size. It is best practice to minimize the number of layers by chaining multiple commands together using &&, which will reduce the number of layers in the resulting image.
+
+6. Use dockerignore file: The .dockerignore file can be used to exclude files and directories that are not required in the image. This can reduce the size of the image by avoiding unnecessary files from being added to the image.
+
+- Why and when to use Docker?
+Ans.Docker is a containerization technology that enables the packaging and running of applications in a container. Here are some of the reasons why and when to use Docker:
+
+1. Portability: Docker containers are platform independent, meaning they can run on any operating system or infrastructure that supports Docker. This makes it easy to move applications between development, testing, and production environments without having to worry about compatibility issues.
+
+2. Consistency: Docker ensures that the application runs in the same way in every environment, reducing the likelihood of errors and inconsistencies that arise from differences in infrastructure and dependencies.
+
+3. Isolation: Docker containers are isolated from each other and from the host system, providing a secure and predictable environment for the application.
+
+4. Scalability: Docker containers can be easily scaled up or down depending on the demand for the application, allowing organizations to manage resources more efficiently.
+
+5. Microservices: Docker is often used in the context of microservices architectures, which involve breaking down an application into smaller, modular components that can be independently deployed and managed.
+
+6. Continuous Integration and Delivery: Docker can be used to streamline the continuous integration and delivery (CI/CD) process, enabling developers to easily test, build, and deploy applications.
+
+- Explain the Docker components and how they interact with each other.
+Ans.Docker is a popular containerization platform that allows you to package applications and their dependencies into self-contained containers that can be run anywhere. Docker has several components that work together to enable containerization.
+
+Here are the main components of Docker:
+
+Docker Daemon: This is the core component of Docker that runs in the background on the host machine. The Docker daemon is responsible for managing Docker objects such as images, containers, networks, and volumes.
+
+Docker CLI: The Docker CLI is a command-line interface that allows users to interact with the Docker daemon. It is used to build, run, and manage Docker containers.
+
+Docker Images: A Docker image is a lightweight, standalone, and executable package that contains everything needed to run an application, including the application code, dependencies, and system tools. Images are created using Dockerfiles and can be stored in registries such as Docker Hub.
+
+Docker Containers: A Docker container is an instance of a Docker image that is running as a process. Containers are isolated from each other and the host machine, making them more secure and portable.
+
+Docker Registries: A Docker registry is a repository that stores Docker images. The most popular registry is Docker Hub, which is a public registry that allows developers to share and distribute their images.
+
+Docker Networking: Docker networking allows containers to communicate with each other and the outside world. Docker supports several networking modes, including bridge, host, and overlay networking.
+
+Docker Volumes: Docker volumes are used to store persistent data generated by containers. Volumes can be used to share data between containers or to persist data across container restarts.
+
+- Explain the terminology: Docker Compose, Docker File, Docker Image, Docker Container?
+Ans.
+
+- In what real scenarios have you used Docker?
+- Docker vs Hypervisor?
+- What are the advantages and disadvantages of using docker?
+- What is a Docker namespace?
+- What is a Docker registry?
+- What is an entry point?
+- How to implement CI/CD in Docker?
+- Will data on the container be lost when the docker container exits?
+- What is a Docker swarm?
+- What are the docker commands for the following:
+  - view running containers
+  - command to run the container under a specific name
+  - command to export a docker
+  - command to import an already existing docker image
+  - commands to delete a container
+  - command to remove all stopped containers, unused networks, build caches, and dangling images?
+- What are the common docker practices to reduce the size of Docker Image?

@@ -1,0 +1,20 @@
+## Tasks: 
+
+**1. What you understood in Jenkin, write a small article in your own words (Don't copy from Internet Directly)**
+Ans.Jenkins is a tool that I've been learning. It's an automation tool that's used to make building, testing, and deploying software applications faster and more reliable.
+
+The idea is to create a continuous integration and continuous delivery (CI/CD) pipeline, which is an automated process that helps deliver software quickly and efficiently.
+
+I've learned that Jenkins is a server that can run on a machine or in the cloud, and it's designed to be really flexible. There are tons of plugins available that can be used to integrate Jenkins with other tools and technologies.
+
+So far, I've been creating jobs in Jenkins, which are sets of instructions that tell Jenkins what to do. For example, a job might tell Jenkins to build a project from source code, run tests to make sure the code works properly, and then deploy the code to a production environment.
+
+There are different ways to run jobs, such as on a schedule, in response to specific events, or manually triggered. I've been using the web-based interface to configure and manage the pipeline, but I've also learned that there's a command-line interface for more advanced users.
+
+I've also been exploring some of the plugins available in Jenkins. For example, I've been using a plugin to integrate Jenkins with a source control system called Git. There are other plugins available for running tests and deploying to cloud services like AWS or Google Cloud Platform.
+
+Overall, I'm really impressed with Jenkins so far. It's a powerful automation tool that can help teams to deliver software more quickly and reliably. By automating the process of building, testing, and deploying software, Jenkins can help to reduce the risk of human error, improve the quality of the software, and speed up the delivery process. I'm excited to keep learning more about Jenkins and exploring all the different ways it can be used to streamline the software development process.
+
+**2.Create a freestyle pipeline to print "Hello World!!**
+Hint: Use link for [Article](https://www.geeksforgeeks.org/what-is-jenkins)
+Ans.
