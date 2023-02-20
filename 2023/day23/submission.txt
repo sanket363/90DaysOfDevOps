@@ -1,1 +1,61 @@
-Done with day 23
+# Task-01
+- create a agent for your app. ( which you deployed from docker in earlier task)
+- Create a new Jenkins freestyle project for your app.
+- In the "Build" section of the project, add a build step to run the "docker build" command to build the image for the container.
+- Add a second step to run the "docker run" command to start a container using the image created in step 3.
+Ans.
+docker file:
+# Use the official Alpine image as the base
+FROM alpine:latest
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . /app
+
+# Install any necessary packages or dependencies
+RUN apk update && apk add --no-cache bash
+
+# Specify the command to run when the container starts
+CMD ["echo", "Hello, World!"]
+
+Docker commands:
+
+docker build -t my-app .
+echo "Docker build done"
+docker run -p 8000:3000 my-app
+
+# Task-02
+- Create Jenkins project to run "docker-compose up -d" command to start the multiple containers defined in the compose file (Hint- use day-19 Application & Database docker-compose file)
+- Set up a cleanup step in the Jenkins project to run "docker-compose down" command to stop and remove the containers defined in the compose file.
+Ans.
+pipeline:
+pipeline {
+    agent any
+    stages {
+        stage('Run Docker Compose') {
+            steps {
+                sh '''
+                    docker-compose up -d
+                '''
+            }
+        }
+        stage('Turn Off Docker Compose') {
+            steps {
+                input message: 'Confirm to turn off the Docker Compose', submitter: 'user'
+                sh '''
+                    docker-compose down
+                '''
+            }
+        }
+    }
+}
+
+docker-compose file:
+version: '3'
+services:
+  web:
+    image: nginx
+    ports:
+      - "80:80"
