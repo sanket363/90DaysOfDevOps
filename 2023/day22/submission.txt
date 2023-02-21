@@ -18,3 +18,34 @@ Overall, I'm really impressed with Jenkins so far. It's a powerful automation to
 **2.Create a freestyle pipeline to print "Hello World!!**
 Hint: Use link for [Article](https://www.geeksforgeeks.org/what-is-jenkins)
 Ans.
+
+
+****************************************************************
+
+How to install the jenkins 
+Installation of jenkins and java
+Install java-11-openjdk
+
+Install java-11-openjdk:
+sudo yum install -y java-11-openjdk
+
+Install the Repo and Key, and Then Install/Start Jenkins
+
+Install wget:
+
+sudo yum install -y wget
+Download the repo:
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+Import the required key:
+
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+Install Jenkins:
+
+sudo yum install -y jenkins
+Enable Jenkins:
+
+sudo systemctl enable jenkins
+Start Jenkins:
+
+sudo systemctl start jenkins
