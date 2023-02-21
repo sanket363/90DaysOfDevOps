@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+        stage('Run Docker Compose') {
+            steps {
+                sh '''
+                    docker-compose up -d
+                '''
+            }
+        }
+        stage('Turn Off Docker Compose') {
+            steps {
+                input message: 'Confirm to turn off the Docker Compose', submitter: 'user'
+                sh '''
+                    docker-compose down
+                '''
+            }
+        }
+    }
+}
