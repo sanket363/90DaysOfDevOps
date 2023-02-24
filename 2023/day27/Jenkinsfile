@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Code Checkout') {
+        steps {
+        git branch: 'master', url: 'https://github.com/sanket363/node-todo-cicd.git'
+        }
+        }
+
+        stage('Build and Test') {
+        steps {
+            sh 'docker build -t snaket2628/my-app1 .'
+        }
+        }
+
+        stage('Push to Docker Hub') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+                sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
+                sh 'docker push snaket2628/my-app1:latest'
+            }
+        }
+        }
+
+        stage('Deploy to Localhost') {
+            steps {
+                script {
+                    def dele = sh(script: 'docker ps -aq', returnStdout: true).trim()
+                    sh "docker rm -f $dele"
+                    sh "docker run -d -p 8000:8000 snaket2628/my-app1:latest"
+                }
+            }
+        }
+    }
+}
