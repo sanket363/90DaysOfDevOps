@@ -54,7 +54,7 @@ This makes it an interesting option for users who are new to containers, and als
 ## Task-01:
 
 ## Install minikube on your local
-
+Ans. Done
   
 
 For installation, you can Visit [this page](https://minikube.sigs.k8s.io/docs/start/).
@@ -88,7 +88,7 @@ You can read more about pod from [here](https://kubernetes.io/docs/concepts/work
 ## Task-02:
 
 ## Create your first pod on Kubernetes through minikube.
-
+Ans Done
 We are suggesting you make an nginx pod, but you can always show your creativity and do it on your own.
 
   
