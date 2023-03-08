@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-app
+  labels:
+    app: todo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: todo
+  template:
+    metadata:
+      labels:
+        app: todo
+    spec:
+      volumes:
+        - name: example-configmap-volume
+          configMap:
+            name: my-configmap
+        - name: secret-volume
+          secret:
+            secretName: my-secret
+      containers:
+        - name: todo
+          image: snaket2628/todo
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: my-secret
+                  key: db-username
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: my-secret
+                  key: db-password
+          volumeMounts:
+            - name: example-configmap-volume
+              mountPath: /etc/config
+            - name: secret-volume
+              mountPath: /etc/secrets
+              readOnly: true

@@ -1,0 +1,7 @@
+kind: Configmap
+apiVersion: v1
+metadata:
+  name: my-configmap
+data:
+  database: mysql
+  database_uri: mysql
