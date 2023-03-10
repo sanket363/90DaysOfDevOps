@@ -3,18 +3,18 @@ kind: Deployment
 metadata:
   name: todo-app-deployment
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: todo-app
+      app: todo
   template:
     metadata:
       labels:
-        app: todo-app
+        app: todo
     spec:
       containers:
-        - name: todo-app
-          image: rishikeshops/todo-app
+        - name: todo
+          image: snaket2628/todo
           ports:
             - containerPort: 8000
           volumeMounts:
