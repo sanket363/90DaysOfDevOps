@@ -1,0 +1,5 @@
+#!/bin/bash
+apt-get update
+apt-get install -y apache2
+echo "hello community this is sanket" > /var/www/html/index.html
+systemctl restart apache2
