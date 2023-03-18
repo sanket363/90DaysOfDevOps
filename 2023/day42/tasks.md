@@ -26,3 +26,5 @@ The AWS CLI v2 offers several new features including improved installers, new co
 Let me know if you have any issues while doing the task.
 
 Happy Learning :)
+
+Done
