@@ -16,3 +16,4 @@ To configure this WordPress site, you will create the following resources in AWS
 Read [this](https://aws.amazon.com/getting-started/hands-on/deploy-wordpress-with-amazon-rds/) for a detailed explanation
 Happy Learning :)
 
+Done
