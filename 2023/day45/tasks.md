@@ -17,3 +17,6 @@ Read [this](https://aws.amazon.com/getting-started/hands-on/deploy-wordpress-wit
 Happy Learning :)
 
 Done
+
+see below steps for the setup
+https://ubuntu.com/tutorials/install-and-configure-wordpress#1-overview
