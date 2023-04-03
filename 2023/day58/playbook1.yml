@@ -1,0 +1,9 @@
+---
+- name: Creating a file
+  hosts: servers
+  become: true
+  tasks:
+    - name: Creating a file
+      file:
+        path: /home/ubuntu/new-file.txt
+        state: touch
