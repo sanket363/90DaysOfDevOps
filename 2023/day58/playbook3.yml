@@ -1,0 +1,15 @@
+---
+- name: Installing Docker on Servers
+  hosts: servers
+  become: true
+  tasks:
+  - name: installing docker
+    apt:
+      name: docker.io
+      state: present
+      update_cache: yes
+
+  - name: Starting docker
+    service:
+      name: docker
+      state: started
