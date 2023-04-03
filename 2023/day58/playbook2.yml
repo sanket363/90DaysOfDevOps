@@ -1,0 +1,11 @@
+---
+- name: Create a new User
+  hosts: servers
+  become: true
+  tasks:
+  - name: Add user to the system
+    ansible.builtin.user:
+      name: sanket
+      comment: Sanket
+      uid: 1040
+      group: admin
