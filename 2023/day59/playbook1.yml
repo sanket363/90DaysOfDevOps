@@ -1,0 +1,19 @@
+---
+- name: Web-page Hosting
+  hosts: servers
+  become: true
+  tasks:
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: latest
+
+    - name: Start nginx
+      service:
+        name: nginx
+        state: started
+
+    - name: Deploy webpage
+      copy:
+        src: index.html
+        dest: /var/www/html
