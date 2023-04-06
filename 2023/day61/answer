@@ -1,0 +1,13 @@
+- terraform init: This command initializes a new or existing Terraform working directory by downloading and installing the necessary plugins and modules specified in the configuration files. It creates a .terraform directory to store all the downloaded plugins and modules.
+
+- terraform init -upgrade: This command updates the previously installed plugins and modules to their latest versions. It is useful when the configuration files have been modified to include new modules or updated versions of existing modules.
+
+- terraform plan: This command creates an execution plan that describes what Terraform will do when it applies the configuration. It shows the resources that will be created, updated, or destroyed based on the current state of the infrastructure.
+
+- terraform apply: This command applies the changes described in the execution plan created by terraform plan to the infrastructure. It creates, updates, or destroys the necessary resources to match the configuration.
+
+- terraform validate: This command checks the syntax and consistency of the Terraform configuration files. It verifies that the configuration files are valid and can be used by Terraform.
+
+- terraform fmt: This command formats the Terraform configuration files according to a defined style. It makes the code more readable and consistent.
+
+- terraform destroy: This command destroys all the resources created by Terraform for the given configuration. It is useful when you want to delete the infrastructure that is no longer needed or when you want to start over with a clean slate.
