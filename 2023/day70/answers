@@ -1,0 +1,18 @@
+Q1.Write about different modules Terraform.
+In Terraform, a module is a container for multiple resources that are used together. Modules can be used to create reusable and shareable components, which can help to organize and simplify complex infrastructure code.
+
+When you create a module, you define a set of inputs and outputs that determine how the module interacts with the rest of your infrastructure code. You can then use this module in other parts of your infrastructure code, passing in the necessary inputs and receiving the outputs as needed.
+
+While it is true that by default, all Terraform code is contained within the root module, it's important to note that this is not the same thing as a module in the traditional sense. The root module is simply the top-level directory of your Terraform configuration, and it contains all of the resources and modules defined within your code.
+
+Q2.Difference between Root Module and Child Module.
+The root module is the top-level module in a terraform configuration and is reponsible for calling any child modules that are used within the configuration
+On the other hand a child module is a self-contained directory that contains a set or Terraform configuration files that define a specific set of resources
+Child modules are called from within the root modules
+
+Q3.Is modules and Namespaces are same? Justify your answer for both Yes/No
+In programming, a namespace is a way of organizing code to prevent naming conflicts between different parts of a program. It's a way of partitioning code into logically distinct units, but it doesn't necessarily imply any kind of hierarchy or relationship between different namespaces.
+
+In Terraform, a module is a self-contained unit of configuration that represents a set of resources that can be reused across different parts of an infrastructure. Modules can be used to organize and modularize infrastructure code, making it more reusable and maintainable.
+
+While it's true that modules can be thought of as a kind of namespace, the key difference is that modules are specifically designed to be reusable and composable, whereas namespaces are more of a general-purpose mechanism for organizing code
